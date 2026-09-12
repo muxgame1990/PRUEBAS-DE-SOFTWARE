@@ -37,18 +37,18 @@ jobs:
     - name: Probar con pytest
       run: python -m pytest -v --cov=. --cov-report=html --html=report.html
     - name: Build Clase
-        run: |
+      run: |
           mkdir build
           cp calculadora.py build/
     - name: Build Reporte COV
-        run: |
+      run: |
           cp -r htmlcov build/
     - name: Build Reporte HTML
-        run: |
+      run: |
           cp -r assets build/
           cp -r report.html build/
     - name: Build Artefacto ZIP
-        uses: actions/upload-artifact@v4
-        with:
+      uses: actions/upload-artifact@v4
+      with:
           name: Artefacto-Probado
           path: build/
